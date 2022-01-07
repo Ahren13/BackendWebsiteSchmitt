@@ -1,5 +1,8 @@
 const { mongoose } = require("../index.js");
-const Customer = mongoose.model('customer');
+ const Customer = mongoose.model('customer'); 
+ 
+/* const CustomerModel = require('../models/customer.model');
+const Customer = mongoose.model('customer', CustomerModel); */
 
 exports.findAllCustomers = async function(req, res) {
     try {
