@@ -15,8 +15,6 @@ exports.createBuilding = async function (req, res) {
 
         const building = new Building({
             buildingName: req.body.buildingName,
-            adresse: req.body.adresse,
-            contactPerson: req.body.contactPerson,
             grundrissPath: '',
             doors: [],
         });

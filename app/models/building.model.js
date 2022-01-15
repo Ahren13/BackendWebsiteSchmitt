@@ -9,14 +9,6 @@ const building = new Schema({
         type: String,
         required: [true, 'buildingName darf nicht leer sein !'],
     },
-    adresse: {
-        type: String,
-        required: [true, 'Adressfeld darf nicht leer sein !'],
-    },
-    contactPerson: {
-        type: String,
-        required: [true, 'Kontakt Person darf nicht leer sein !']
-    },
     grundrissPath: String,
     doors : [doorSchema],
 });

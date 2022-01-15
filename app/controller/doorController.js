@@ -16,12 +16,15 @@ exports.createDoor = async function (req, res) {
         const building = await customer.kundenDetails.id(customerDetailsId).buildings.id(buildingId);
 
         const door = new Door({
-            year: req.body.year,
             number: req.body.number,
             hint: req.body.hint,
-            nktip: req.body.nktip,
+            function: req.body.function,
             typ: req.body.typ,
-            din: req.body.din
+            din: req.body.din,
+            supplierab: req.body.supplierab,
+            projectNbOld: req.body.projectNbOld,
+            supplierabPos: req.body.supplierabPos,
+            yearFirstCheck: req.body.yearFirstCheck,
         });
 
         await building.doors.push(door);

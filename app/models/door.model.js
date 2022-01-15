@@ -2,22 +2,31 @@ const mongoose = require('mongoose');
 Schema = mongoose.Schema;
 
 const door = new Schema({
-    year:{
-      type: Number,
-    },
-    number: {
-        type: Number,
+    number:{
+      type: String,
     },
     hint: {
         type: String,
     },
-    nktip: {
+    function: {
+        type: String,
+    },
+    typ: {
         type:String,
     },
-    typ:{
+    din: {
         type:String,
     },
-    din:{
+    supplierab:{
+        type:String,
+    },
+    projectNbOld:{
+        type:String,
+    },
+    supplierabPos:{
+        type:String,
+    },
+    yearFirstCheck:{
         type:String,
     }
 });
