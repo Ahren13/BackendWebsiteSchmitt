@@ -16,7 +16,6 @@ exports.createCustomerDetail = async function (req, res) {
             maintenanceContract: req.body.maintenanceContract,
             maintenanceInterval: req.body.maintenanceInterval,
             calendarWeek: req.body.calendarWeek,
-            exterMaintenanceBusiness: req.body.exterMaintenanceBusiness,
             noteField: req.body.noteField,
         });
 
