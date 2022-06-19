@@ -1,10 +1,11 @@
-const {mongoose} = require("../index.js");
+const { mongoose } = require("../index.js");
 const Customer = mongoose.model('customer');
+
 
 const CustomerDetailModel = require('../models/customerDetail.model');
 const CustomerDetail = mongoose.model('customerDetail', CustomerDetailModel);
 
-exports.createCustomerDetail = async function (req, res) {
+exports.createCustomerDetail = async function(req, res) {
     const customerId = req.params.id;
 
     try {
@@ -32,7 +33,7 @@ exports.createCustomerDetail = async function (req, res) {
     }
 }
 
-exports.deleteCustomerDetail = async function (req, res) {
+exports.deleteCustomerDetail = async function(req, res) {
     const customerId = req.params.id;
     const customerDetailId = req.params.bid;
 
@@ -41,12 +42,12 @@ exports.deleteCustomerDetail = async function (req, res) {
         await customer.kundenDetails.id(customerDetailId).remove();
         await customer.save();
         res.status(200).send(`Deleted CustomerDetails with ID:${customerDetailId} for Customer with ID: ${customerId} successfully!`);
-    }catch (e) {
+    } catch (e) {
         res.status(404).end('FEHLER: ' + e.message);
     }
 }
 
-exports.updateCustomerDetail = async function (req, res) {
+exports.updateCustomerDetail = async function(req, res) {
     const customerId = req.params.id;
     const customerDetailId = req.params.bid;
 
