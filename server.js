@@ -7,6 +7,7 @@ const customerRoutes = require('./app/routes/customerRoutes');
 const customerDetailsRoutes = require('./app/routes/customerDetailsRoutes');
 const buildingRoutes = require('./app/routes/buildingRoutes');
 const doorRoutes = require('./app/routes/doorRoutes');
+const fileRoutes = require('./app/routes/fileRoutes');
 //const upload = require('express-fileupload');
 
 
@@ -49,13 +50,15 @@ db.mongoose
 
 
 
-app.use('/api/customers',customerRoutes);
+app.use('/api/customers', customerRoutes);
 
-app.use('/api/customers/:id/customersDetail',customerDetailsRoutes);
+app.use('/api/customers/:id/customersDetail', customerDetailsRoutes);
 
-app.use('/api/customers/:id/customersDetail/:bid/building',buildingRoutes);
+app.use('/api/customers/:id/customersDetail/:bid/building', buildingRoutes);
 
 app.use('/api/customers/:id/customersDetail/:bid/building/:cid/door', doorRoutes);
+
+app.use('/api/photos', fileRoutes)
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
